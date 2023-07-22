@@ -1,0 +1,11 @@
+2023-07-21/02:21:30		e79b9954-3cb2-450d-9ee7-2fcdc8fa84ae		Error: Not allowed to CORS
+2023-07-21/02:22:16		613d0a84-4000-4239-9d9f-efd0d85632d6		Error: Not allowed to CORS
+2023-07-21/02:22:16		3fff6322-f33d-4c61-bfd4-91cf74c6dc88		Error: Not allowed to CORS
+2023-07-21/02:34:53		b0322d2f-f964-4c8b-9141-aa4c255b2655		TypeError: res.accepts is not a function
+2023-07-21/11:25:58		5eaf671b-2b5e-40b2-ac7f-1ba17e5c3b1a		Error: ENOENT: no such file or directory, stat 'D:\NodeJS_Project\Study\routes\views\index.html'
+2023-07-21/11:28:11		487b50a2-8ca8-460a-b3c3-f7f8c93ae189		Error: ENOENT: no such file or directory, stat 'D:\NodeJS_Project\Study\routes\views\index.html'
+2023-07-21/11:28:25		17d2d4bf-4def-408a-a566-cfd1a8fedc07		Error: ENOENT: no such file or directory, stat 'D:\NodeJS_Project\Study\routes\views\index.html'
+2023-07-21/11:31:05		24ffe67e-d0e6-4508-a004-7a12d1111d75		TypeError: path argument is required to res.sendFile
+2023-07-21/11:33:08		adc806ec-ea39-4b48-a109-c37f5286b637		TypeError: path argument is required to res.sendFile
+2023-07-21/11:33:13		6f429b36-5c61-4302-b4db-8f2f4264c344		TypeError: path argument is required to res.sendFile
+2023-07-22/12:07:25		eb8e5c80-667c-4943-a05d-6e5dd822e813		TypeError: Cannot read properties of undefined (reading 'id')
