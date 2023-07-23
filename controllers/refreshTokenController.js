@@ -1,23 +1,18 @@
-const usersDB = {
-    users: require("../model/users.json"),
-    setUser: function (data) {
-        this.users = data;
-    },
-};
+const User = require("../model/User");
 
 const jwt = require("jsonwebtoken");
-require("dotenv").config();
 
-const handleRefreshToken = function (req, res) {
+const handleRefreshToken = async function (req, res) {
     const cookies = req.cookies;
 
-    if (!cookies?.jwt) {
+    if (!cookies.jwt) {
         return res.sendStatus(401);
     }
 
     const refreshToken = cookies.jwt;
 
-    const foundUser = usersDB.users.find((person) => person.refreshToken === refreshToken);
+    const foundUser = await User.findOne({ refreshToken }).exec();
+
     if (!foundUser) return res.sendStatus(403); //Forbidden
     // Evaluate JWTs
     jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
