@@ -1,15 +1,16 @@
-# Header1
+# NodeJS Project Setup
 
-## Header2
+> dependencies
 
-### Header 3
+    1. bcrypt
+    2. cookie-parser
+    3. cors
+    4. dotenv
+    5. express
+    6. jsonwebtoken
+    7. mongoose
+    8. uuid
 
-#### Header 4
+> devDependencies
 
-##### Header 5
-
-###### Header 6
-
-> BlockQuote
->
-> > Nested BlockQuotes
+    1. nodemon
