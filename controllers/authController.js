@@ -5,12 +5,14 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const handleLogin = async function (req, res) {
     const { user, password } = req.body;
+    console.log(req);
 
     if (!user || !password) {
         return res.status(400).json({ message: "Username or Password are required" });
     }
 
     const foundUser = await User.findOne({ username: user }).exec();
+
     if (!foundUser) return res.sendStatus(401); //Unauthorized
     // Evaluate Password
     const match = await bcrypt.compare(password, foundUser.password);
@@ -43,7 +45,7 @@ const handleLogin = async function (req, res) {
         res.cookie("jwt", refreshToken, {
             httpOnly: true,
             sameSite: "None",
-            // secure: true,
+            secure: true,
             maxAge: 24 * 60 * 60 * 1000,
         });
         res.json({

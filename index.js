@@ -13,7 +13,7 @@ const credentials = require("./middleware/credentials");
 
 const connectDB = require("./config/dbConn");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3500;
 
 const app = express();
 
