@@ -8,7 +8,7 @@ const mongooses = require("mongoose");
 const { errorHandler } = require("./middleware/errorHandler");
 const { logger } = require("./middleware/logEvents");
 const corsOptions = require("./config/corsOptions");
-const verifyJWT = require("./middleware/verifyJWT");
+
 const credentials = require("./middleware/credentials");
 
 const connectDB = require("./config/dbConn");
@@ -53,8 +53,7 @@ app.use("/login", require("./routes/auth"));
 app.use("/refresh", require("./routes/refresh"));
 app.use("/logout", require("./routes/logout"));
 
-app.use(verifyJWT);
-app.use("/employees", require("./routes/api/employees"));
+app.use("/courses", require("./routes/api/courses"));
 
 app.all("*", (req, res) => {
     res.status(404);

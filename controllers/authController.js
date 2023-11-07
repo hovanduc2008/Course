@@ -5,7 +5,6 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const handleLogin = async function (req, res) {
     const { user, password } = req.body;
-    console.log(req);
 
     if (!user || !password) {
         return res.status(400).json({ message: "Username or Password are required" });
@@ -29,12 +28,12 @@ const handleLogin = async function (req, res) {
                 },
             },
             process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: "30s" },
+            { expiresIn: "1d" },
         );
         const refreshToken = jwt.sign(
             { username: foundUser.username },
             process.env.REFRESH_TOKEN_SECRET,
-            { expiresIn: "1d" },
+            { expiresIn: "7d" },
         );
 
         // Saving Refresh Token with current user
