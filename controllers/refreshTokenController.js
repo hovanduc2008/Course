@@ -21,6 +21,7 @@ const handleRefreshToken = async function (req, res) {
         const accessToken = jwt.sign(
             {
                 UserInfo: {
+                    userId: foundUser._id,
                     username: decoded.username,
                     roles: roles,
                 },

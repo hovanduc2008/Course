@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const coursesController = require("../../controllers/coursesController");
+const reviewcourseController = require("../../controllers/reviewCourseController");
 
 const ROLES_LIST = require("../../config/roles_list");
 
@@ -32,6 +33,17 @@ router
         verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor),
         coursesController.updateCourse,
     );
+
+router
+    .route("/:courseId/review")
+    .post(verifyJWT, reviewcourseController.addReview)
+    .get(reviewcourseController.getAllReviews);
+
+router
+    .route("/:courseId/review/:id")
+    .get(reviewcourseController.getReview)
+    .put(verifyJWT, reviewcourseController.updateReview)
+    .delete(verifyJWT, reviewcourseController.deleteReview);
 
 // Lấy 1 bài học trong khóa học, sửa, xóa
 router
