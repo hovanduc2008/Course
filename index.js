@@ -55,6 +55,7 @@ app.use("/logout", require("./routes/logout"));
 
 app.use("/courses", require("./routes/api/courses"));
 app.use("/users", require("./routes/api/users"));
+app.use("/contacts", require("./routes/api/contacts"));
 
 app.all("*", (req, res) => {
     res.status(404);

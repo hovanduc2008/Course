@@ -1,23 +1,28 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-    userId: {
-        type: String,
-        require: true,
+const userSchema = new Schema(
+    {
+        userId: {
+            type: String,
+            require: true,
+        },
+        courseId: {
+            type: String,
+            require: true,
+        },
+        description: {
+            type: String,
+        },
+        star: {
+            type: Number,
+            require: true,
+        },
+        refreshToken: String,
     },
-    courseId: {
-        type: String,
-        require: true,
+    {
+        timestamps: true, // Tự động thêm created_at và updated_at
     },
-    description: {
-        type: String,
-    },
-    star: {
-        type: Number,
-        require: true,
-    },
-    refreshToken: String,
-});
+);
 
 module.exports = mongoose.model("Review", userSchema);

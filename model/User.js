@@ -1,24 +1,29 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-    username: {
-        type: String,
-        require: true,
-    },
-    roles: {
-        User: {
-            type: Number,
-            default: 2001,
+const userSchema = new Schema(
+    {
+        username: {
+            type: String,
+            require: true,
         },
-        Editor: Number,
-        Admin: Number,
+        roles: {
+            User: {
+                type: Number,
+                default: 2001,
+            },
+            Editor: Number,
+            Admin: Number,
+        },
+        password: {
+            type: String,
+            require: true,
+        },
+        refreshToken: String,
     },
-    password: {
-        type: String,
-        require: true,
+    {
+        timestamps: true, // Tự động thêm created_at và updated_at
     },
-    refreshToken: String,
-});
+);
 
 module.exports = mongoose.model("User", userSchema);
